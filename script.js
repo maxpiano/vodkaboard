@@ -1,6 +1,6 @@
 function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  let audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  let key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   if (!audio) return;
   audio.currentTime = 0;
   audio.play();
@@ -15,3 +15,15 @@ function removeTransition(e) {
 const keys = document.querySelectorAll(".key");
 keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
 window.addEventListener("keydown", playSound);
+
+keys.forEach((key) =>
+  key.addEventListener("click", function () {
+    let audio = document.querySelector(
+      `audio[data-key="${this.getAttribute("data-key")}"]`
+    );
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    this.classList.add("playing");
+  })
+);

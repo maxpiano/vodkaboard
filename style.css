@@ -18,10 +18,6 @@ html {
   height: 100vh;
 }
 
-/* .wrapper > * { */
-/*   flex: 1 100%; */
-/* } */
-
 .header {
   flex: 1;
   display: flex;
@@ -39,11 +35,6 @@ html {
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
-  /* min-height: 100vh; */
-  /* height: 90%; */
-  /* width: 100vw; */
-  /* max-height: 800px; */
-  /* max-width: 1000px; */
   padding-bottom: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -60,12 +51,18 @@ html {
   color: white;
   background: rgba(0, 0, 0, 0.6);
   text-shadow: 0 0 2.5rem black;
+  user-select: none;
 }
 
 .key:hover {
   background: rgba(68, 66, 66, 0.6);
   cursor: pointer;
 }
+
+/* .key:active { */
+/*   transform: scale(0.8); */
+/* } */
+
 .playing {
   transform: scale(0.8);
 }
